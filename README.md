@@ -1,16 +1,22 @@
-### Hi there 👋
+# ![](https://igorabrandao.com.br/wp-content/uploads/2019/03/favicon.png) Igor Augusto Brandão
 
-<!--
-**igorabrandao/igorabrandao** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitoriano-ernandes/)](https://www.linkedin.com/in/igorbrandao/)
+[![Telegram Badge](https://img.shields.io/badge/-Telegram-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=telegram&logoColor=white&link=https://t.me/vitorianoernandes)](https://t.me/igorabrandao)
+[![Email Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:contato@vitorianoernandes.com.br)](mailto:igorabrandao@gmail.com)
+[![Website Badge](http://img.shields.io/badge/-Website-brightgreen?style=flat-square&logo=Html5&logoColor=white)](https://igorabrandao.com.br/)
 
-Here are some ideas to get you started:
+    Minha **missão** é desenvolver soluções em Tecnologia da Informação (TI) para transformar o seu projeto em realidade.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    Tenho como **visão** ser o maior e melhor profissional freelancer em TI.
+
+    Meus **valores** são transparência, respeito, ética  e bom relacionamento para com os meus stakeholders.
+
+**Algumas tecnologias que utilizo:**  
+
+<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
+<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>
+<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"></code>
+<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/php/php.png"></code>
+<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"></code>
+
+![Igor github stats](https://github-readme-stats.vercel.app/api?username=igorabrandao)
