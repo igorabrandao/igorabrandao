@@ -5,7 +5,7 @@
 [![Email Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:contato@vitorianoernandes.com.br)](mailto:igorabrandao@gmail.com)
 [![Website Badge](http://img.shields.io/badge/-Website-brightgreen?style=flat-square&logo=Html5&logoColor=white)](https://igorabrandao.com.br/)
 
-    My **mission** is to develop solutions in Information Technology (IT) to turn your project into reality.
+    My **mission** is to develop IT solutions to turn your project into reality.
 
     My **vision** is to be the biggest and best freelance IT professional.
 
