@@ -36,7 +36,7 @@
 
 ### 📊 GitHub Stats
 
-[![Igor's GitHub Stats](https://github-readme-stats.vercel.app/api?username=igorabrandao&show_icons=true&theme=github_dark&hide_title=true)](https://github.com/igorabrandao)
+[![Igor's GitHub Stats](https://github-readme-stats.vercel.app/api?username=igorabrandao&show_icons=true&theme=github_dark&hide_title=true&cache_seconds=3600)](https://github.com/igorabrandao)
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=igorabrandao&layout=compact&theme=github_dark&hide_title=true)](https://github.com/igorabrandao)
 
