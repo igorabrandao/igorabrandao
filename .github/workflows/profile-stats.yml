@@ -21,7 +21,6 @@ jobs:
         with:
           fetch-depth: 1
 
-      # evita loop: se o workflow foi disparado por push do bot, não faz commit/push de volta
       - name: Detect bot push
         id: botcheck
         shell: bash
@@ -32,10 +31,11 @@ jobs:
             echo "skip_commit=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Clean old metrics
-        run: rm -rf metrics && mkdir -p metrics
+      - name: Prepare metrics folder
+        run: |
+          rm -rf metrics
+          mkdir -p metrics
 
-      # ÚNICA execução (leve): commits no ano + streaks
       - name: Generate calendar + streak metrics
         uses: lowlighter/metrics@latest
         with:
@@ -48,9 +48,31 @@ jobs:
           plugin_calendar_limit: 1
           plugin_streak: yes
 
+      - name: Debug generated files
+        shell: bash
+        run: |
+          echo "== repo root =="
+          ls -la
+          echo "== metrics folder =="
+          ls -la metrics || true
+          echo "== metrics.svg exists? =="
+          test -f metrics/metrics.svg && echo "YES" || (echo "NO" && exit 0)
+
+      - name: Upload metrics artifact (debug)
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-metrics
+          path: metrics/
+
       - name: Commit changes
         if: steps.botcheck.outputs.skip_commit == 'false'
+        shell: bash
         run: |
+          if [ ! -f "metrics/metrics.svg" ]; then
+            echo "metrics/metrics.svg not found, skipping commit."
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add metrics/metrics.svg
