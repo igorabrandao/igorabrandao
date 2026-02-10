@@ -1,8 +1,11 @@
 name: Generate GitHub Cards
 
 on:
+  push:
+    branches:
+      - master
   schedule:
-    - cron: "0 3 * * *"  # todo dia 03:00 UTC
+    - cron: "0 3 * * *" # todo dia 03:00 UTC
   workflow_dispatch:
 
 jobs:
