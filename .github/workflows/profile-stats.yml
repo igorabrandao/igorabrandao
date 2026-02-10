@@ -13,8 +13,6 @@ permissions:
 
 jobs:
   build:
-    # evita loop: não roda quando o push foi feito pelo próprio bot
-    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -22,6 +20,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      # evita loop: se o workflow foi disparado por push do bot, não faz commit/push de volta
+      - name: Detect bot push
+        id: botcheck
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.actor }}" = "github-actions[bot]" ]; then
+            echo "skip_commit=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip_commit=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Clean old cards
         run: rm -rf profile-summary-card-output
@@ -34,7 +42,15 @@ jobs:
           USERNAME: igorabrandao
           THEME: github-dark
 
+      - name: List generated files (debug)
+        run: |
+          echo "== output folder =="
+          ls -la profile-summary-card-output || true
+          echo "== theme folder =="
+          ls -la profile-summary-card-output/github-dark || true
+
       - name: Commit changes
+        if: steps.botcheck.outputs.skip_commit == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
