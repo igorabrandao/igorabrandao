@@ -1,0 +1,28 @@
+name: Generate GitHub Cards
+
+on:
+  schedule:
+    - cron: "0 3 * * *"  # todo dia 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate Summary Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: igorabrandao
+          THEME: github_dark
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile-summary-card-output
+          git commit -m "chore: update profile cards" || exit 0
+          git push
