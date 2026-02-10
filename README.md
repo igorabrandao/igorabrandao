@@ -36,11 +36,13 @@
 
 ### 📊 GitHub Stats
 
-[![Igor's GitHub Stats](https://github-readme-stats.vercel.app/api?username=igorabrandao&show_icons=true&theme=github_dark&hide_title=true&cache_seconds=3600)](https://github.com/igorabrandao)
+[![Igor's GitHub Stats](https://github-readme-stats.vercel.app/api?username=igorabrandao&show_icons=true&theme=github_dark&hide_title=true&count_private=true&include_all_commits=true&cache_seconds=86400)](https://github.com/igorabrandao)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=igorabrandao&layout=compact&theme=github_dark&hide_title=true)](https://github.com/igorabrandao)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=igorabrandao&layout=compact&theme=github_dark&hide_title=true&langs_count=8&count_private=true)](https://github.com/igorabrandao)
 
-<!-- Widgets are powered by https://github.com/anuraghazra/github-readme-stats -->
+[![GitHub Streak](https://streak-stats.demolab.com?user=igorabrandao&theme=github-dark&hide_border=true)](https://git.io/streak-stats)
+
+[![Igor's GitHub activity graph](https://github-readme-activity-graph.vercel.app/graph?username=igorabrandao&theme=github-dark)](https://github.com/igorabrandao)
 
 ---
 
