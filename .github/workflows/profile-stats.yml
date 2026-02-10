@@ -8,11 +8,23 @@ on:
     - cron: "0 3 * * *" # todo dia 03:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
+    # evita loop: não roda quando o push foi feito pelo próprio bot
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clean old cards
+        run: rm -rf profile-summary-card-output
 
       - name: Generate Summary Cards
         uses: vn7n24fzkq/github-profile-summary-cards@release
@@ -20,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         with:
           USERNAME: igorabrandao
-          THEME: github_dark
+          THEME: github-dark
 
       - name: Commit changes
         run: |
