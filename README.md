@@ -36,9 +36,9 @@
 
 ### 📊 GitHub Stats
 
-[![Igor's GitHub Stats](https://github-readme-stats.vercel.app/api?username=igorabrandao&show_icons=true&theme=github_dark&hide_title=true&count_private=true&include_all_commits=true&cache_seconds=86400)](https://github.com/igorabrandao)
+![Igor's GitHub Stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=igorabrandao&show_icons=true&theme=github_dark&hide_title=true&count_private=true&include_all_commits=true)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=igorabrandao&layout=compact&theme=github_dark&hide_title=true&langs_count=8&count_private=true)](https://github.com/igorabrandao)
+![Top Languages](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=igorabrandao&layout=compact&theme=github_dark&hide_title=true&langs_count=8&count_private=true)
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=igorabrandao&theme=github-dark&hide_border=true)](https://git.io/streak-stats)
 
