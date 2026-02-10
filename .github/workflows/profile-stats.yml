@@ -1,11 +1,11 @@
-name: Generate GitHub Cards
+name: Generate GitHub Metrics
 
 on:
   push:
     branches:
       - master
   schedule:
-    - cron: "0 3 * * *" # todo dia 03:00 UTC
+    - cron: "0 3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -31,29 +31,66 @@ jobs:
             echo "skip_commit=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Clean old cards
-        run: rm -rf profile-summary-card-output
+      - name: Clean old metrics
+        run: rm -rf metrics && mkdir -p metrics
 
-      - name: Generate Summary Cards
-        uses: vn7n24fzkq/github-profile-summary-cards@release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      # 1) Base card
+      - name: Generate base metrics
+        uses: lowlighter/metrics@latest
         with:
-          USERNAME: igorabrandao
-          THEME: github-dark
+          token: ${{ secrets.GH_PAT }}
+          user: igorabrandao
+          filename: metrics/metrics-base.svg
+          template: classic
+          base: header, activity, community, repositories, metadata
+
+      # 2) Commits por dia no ano (calendar)
+      - name: Generate calendar metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.GH_PAT }}
+          user: igorabrandao
+          filename: metrics/metrics-calendar.svg
+          template: classic
+          base: ""
+          plugin_calendar: yes
+          plugin_calendar_limit: 1
+
+      # 3) Streaks
+      - name: Generate streak metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.GH_PAT }}
+          user: igorabrandao
+          filename: metrics/metrics-streak.svg
+          template: classic
+          base: ""
+          plugin_streak: yes
+
+      # 4) Commits por hora + por dia da semana (habits)
+      - name: Generate habits metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.GH_PAT }}
+          user: igorabrandao
+          filename: metrics/metrics-habits.svg
+          template: classic
+          base: ""
+          plugin_habits: yes
+          plugin_habits_from: 365
+          plugin_habits_days: 14
+          plugin_habits_charts: yes
 
       - name: List generated files (debug)
         run: |
-          echo "== output folder =="
-          ls -la profile-summary-card-output || true
-          echo "== theme folder =="
-          ls -la profile-summary-card-output/github-dark || true
+          echo "== metrics folder =="
+          ls -la metrics || true
 
       - name: Commit changes
         if: steps.botcheck.outputs.skip_commit == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add profile-summary-card-output
-          git commit -m "chore: update profile cards" || exit 0
+          git add metrics
+          git commit -m "chore: update github metrics" || exit 0
           git push
